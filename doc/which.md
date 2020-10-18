@@ -45,95 +45,95 @@ which.cmd accepts the following parameters:
 
 ***\> which***
 
-> **Usage:          which [-a] [-v] <progName>+**
+> **Usage:          which [-a] [-v] <progName>+**<br/>
 
 ***\> which ipconfig***
 
-> **C:\Windows\System32\ipconfig.exe**
+> **C:\Windows\System32\ipconfig.exe**<br/>
 
 ***\> which -v ipconfig***
 
-> **ipconfig**
->         **Windows\System32\ipconfig.exe**
+> **ipconfig**<br/>
+>     &nbsp;&nbsp;&nbsp;&nbsp;**Windows\System32\ipconfig.exe**<br/>
 
 ***\> which ipconfig ifconfig***
 
-> **ipconfig**
->         **C:\Windows\System32\ipconfig.exe**
-> **ifconfig**
+> **ipconfig**<br/>
+>     &nbsp;&nbsp;&nbsp;&nbsp;**C:\Windows\System32\ipconfig.exe**<br/>
+> **ifconfig**<br/>
 
 ***\> which ipconfig notepad***
 
-> **ipconfig**
->         **C:\Windows\System32\ipconfig.exe**
-> **notepad**
->         **C:\Windows\System32\notepad.exe**
+> **ipconfig**<br/>
+>     &nbsp;&nbsp;&nbsp;&nbsp;**C:\Windows\System32\ipconfig.exe**<br/>
+> **notepad**<br/>
+>     &nbsp;&nbsp;&nbsp;&nbsp;**C:\Windows\System32\notepad.exe**<br/>
 
 ***\> which -a ipconfig notepad***
 
-> **ipconfig**
->         **C:\Windows\System32\ipconfig.exe**
-> **notepad**
->         **C:\Windows\System32\notepad.exe**
->        **C:\Windows\notepad.exe**
+> **ipconfig**<br/>
+>     &nbsp;&nbsp;&nbsp;&nbsp;**C:\Windows\System32\ipconfig.exe**<br/>
+> **notepad**<br/>
+>     &nbsp;&nbsp;&nbsp;&nbsp;**C:\Windows\System32\notepad.exe**<br/>
+>     &nbsp;&nbsp;&nbsp;&nbsp;**C:\Windows\notepad.exe**<br/>
 
 ***\> set DEBUG=ON***
 ***\> which cmd***
 ***\> set DEBUG=***
 
-> *DEBUG: FindMode = first, VERBOSE = no*
-> *DEBUG: ArgumentsLoop:Begin*
-> *DEBUG:  PathsLoop:Begin*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.COM*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.EXE*
-> C:\Windows\System32\cmd.exe
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.BAT*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.CMD*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.VBS*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.VBE*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.JS*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.JSE*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.WSF*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.WSH*
-> *DEBUG:  Testing for file C:\Windows\system32\cmd.MSC*
-> *DEBUG:  Testing for file C:\Windows\cmd.*
-> *DEBUG:  Testing for file C:\Windows\cmd.COM*
-> *DEBUG:  Testing for file C:\Windows\cmd.EXE*
-> *DEBUG:  Testing for file C:\Windows\cmd.BAT*
-> *DEBUG:  Testing for file C:\Windows\cmd.CMD*
-> *DEBUG:  Testing for file C:\Windows\cmd.VBS*
-> *DEBUG:  Testing for file C:\Windows\cmd.VBE*
-> *DEBUG:  Testing for file C:\Windows\cmd.JS*
-> *DEBUG:  Testing for file C:\Windows\cmd.JSE*
-> *DEBUG:  Testing for file C:\Windows\cmd.WSF*
-> *DEBUG:  Testing for file C:\Windows\cmd.WSH*
-> *DEBUG:  Testing for file C:\Windows\cmd.MSC*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.COM*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.EXE*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.BAT*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.CMD*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.VBS*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.VBE*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.JS*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.JSE*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.WSF*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.WSH*
-> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.MSC*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.COM*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.EXE*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.BAT*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.CMD*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.VBS*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.VBE*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.JS*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.JSE*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.WSF*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.WSH*
-> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.MSC*
-> *DEBUG:  PathsLoop:End*
+> *DEBUG: FindMode = first, VERBOSE = no*<br/>
+> *DEBUG: ArgumentsLoop:Begin*<br/>
+> *DEBUG:  PathsLoop:Begin*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.COM*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.EXE*<br/>
+> **C:\Windows\System32\cmd.exe**<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.BAT*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.CMD*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.VBS*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.VBE*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.JS*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.JSE*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.WSF*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.WSH*<br/>
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.MSC*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.COM*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.EXE*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.BAT*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.CMD*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.VBS*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.VBE*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.JS*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.JSE*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.WSF*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.WSH*<br/>
+> *DEBUG:  Testing for file C:\Windows\cmd.MSC*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.COM*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.EXE*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.BAT*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.CMD*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.VBS*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.VBE*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.JS*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.JSE*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.WSF*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.WSH*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.MSC*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.COM*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.EXE*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.BAT*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.CMD*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.VBS*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.VBE*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.JS*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.JSE*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.WSF*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.WSH*<br/>
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.MSC*<br/>
+> *DEBUG:  PathsLoop:End*<br/>
 
 ### Compatibility
 
