@@ -77,8 +77,8 @@ which.cmd accepts the following parameters:
 >     &nbsp;&nbsp;&nbsp;&nbsp;**C:\Windows\System32\notepad.exe**<br/>
 >     &nbsp;&nbsp;&nbsp;&nbsp;**C:\Windows\notepad.exe**<br/>
 
-***\> set DEBUG=ON***
-***\> which cmd***
+***\> set DEBUG=ON***<br/>
+***\> which cmd***<br/>
 ***\> set DEBUG=***
 
 > *DEBUG: FindMode = first, VERBOSE = no*<br/>
