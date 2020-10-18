@@ -11,7 +11,7 @@ These command line scripts have been gleaned and collected from the internet, or
 
 Script that replaces the Unix command which, which prints the full path of an executable file present in the *%PATH%*. It is useful to find the path of installed files, or detect if a different version of an expected command is executed when called.
 
-[Help file](doc\which.md)
+[Help file](doc/which.md)
 
 
 
@@ -21,5 +21,5 @@ Script that replaces the Unix command which, which prints the full path of an ex
 
 |               **Command** | **version** | command.com<br /><small>DOS / Win16 / Win32s</small><br /><small>Win9x / Win32c</small> | cmd.exe<br /><small>Win9x / Win32c</small> | cmd.exe<br /><small>NT&nbsp;4.0</small> | cmd.exe<br /><small>NT&nbsp;5.x (Windows 2000/XP)</small> | cmd.exe<br /><small>NT 6.x~10.x (Vista/7/8/8.1/10)</small> | powershell.exe<br /><small>NT 6.x~10.x (Vista/7/8/8.1/10)</small> |
 | ------------------------: | :---------: | :----------------------------------------------------------: | :----------------------------------------: | :-------------------------------------: | :-------------------------------------------------------: | :--------------------------------------------------------: | :----------------------------------------------------------: |
-| [which.cmd](doc\which.md) |     0.2     |                              ✗                               |                   &nbsp;                   |                 &nbsp;                  |                             ?                             |                             ✓                              |                              ✗                               |
+| [which.cmd](doc/which.md) |     0.3     |                              ✗                               |                   &nbsp;                   |                 &nbsp;                  |                             ?                             |                             ✓                              |                              ✗                               |
 

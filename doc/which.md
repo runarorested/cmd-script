@@ -1,8 +1,15 @@
 # which command line tool
 
+
+
+## Description
+
 *which* is a command line tool (*scriptlet*) that locates the **executable** file that would have been called by exploring the directories in the *%PATH%*. This functionality is OS-dependent, usually due to the native file system used.
 
+### Details
+
 Depending of the OS, the files are marked as executables either with:
+
 * appending a **known file extension(s)** to its name (like Microsoft's does in MS-DOS/Windows with *.com* *.exe* *.bat* ).
 * associating an **execution file attribute/permission/metadata** at the file (done in UNIX-variants like Linux/Android/BSD/others with the *eXecution attribute*).
 
@@ -11,11 +18,131 @@ The equivalents in different OS are:
 2. ***where.exe* for Microsoft Windows**: It is Win32 equivalent, available from Windows 2003 Server and its succesors. 2000/XP does not have it available by default but can be installed from the Windows 2003 Resource Kit. Availability and working status on previous Windows NT versiones (NT 3.1, NT 4.0) is unknown. Windows 95/98/Me does not have it, probably unneeded due a mixture of hardcoded limitations still present from DOS and the *COMMAND.COM* command line interpreter, and the lack of a *cmd.exe* port for the OS.
 3. ***TRUENAME* for MS-DOS**: *TRUENAME* is a hidden command.com native command. It does not find the file passed, only translates virtual paths (due to *subst* / *join*) into real ones. So if you call **C:\USER>TRUEPATH FC**, it will return **C:\USER\FC.EXE** because you can execute it from the current directory due to it being in the PATH, instead of the expected answer of **C:\DOS\FC.EXE**. In other words, it will not locate it but it will show if it is available in the path without executing it.
 
+In other worlds: do not mix-up Unix' [whereis](http://man7.org/linux/man-pages/man1/whereis.1.html) with [which](https://manpages.debian.org/stretch/debianutils/which.1.en.html) or where.exe, which work differently.
 
-### Self-reminder notes:
-* Do not mix-up with Unix' [whereis](http://man7.org/linux/man-pages/man1/whereis.1.html) with [which](https://manpages.debian.org/stretch/debianutils/which.1.en.html) or where.exe.
+### Purpose
 
-### References:
+To create a highly simplified equivalent to unix which that does not require installing an executable or  using a win-bash script.
+
+
+
+## User manual
+
+which.cmd accepts the following parameters:
+
+> which [-a] [-v] \<progName\>+
+
+### Flags
+
+* **-a -all /a /all** are all equivalent flags that enable finding all possible file matches instead of merely stopping at the first when possible.
+
+* **-v -verbose /v /verbose** are all equivalent flags that force the indented output mode that is activated when more that one file to be searched for are specified.
+
+* **progName** are names of executable files that could be called and you are trying to locate in the collection of directories *%PATH%*.
+* ***%DEBUG%*** is a system variable, that when defined as an non empty value, will force which to print debug text in execution.
+
+### Examples of use
+
+***\> which***
+
+> **Usage:          which [-a] [-v] <progName>+**
+
+***\> which ipconfig***
+
+> **C:\Windows\System32\ipconfig.exe**
+
+***\> which -v ipconfig***
+
+> **ipconfig**
+>         **Windows\System32\ipconfig.exe**
+
+***\> which ipconfig ifconfig***
+
+> **ipconfig**
+>         **C:\Windows\System32\ipconfig.exe**
+> **ifconfig**
+
+***\> which ipconfig notepad***
+
+> **ipconfig**
+>         **C:\Windows\System32\ipconfig.exe**
+> **notepad**
+>         **C:\Windows\System32\notepad.exe**
+
+***\> which -a ipconfig notepad***
+
+> **ipconfig**
+>         **C:\Windows\System32\ipconfig.exe**
+> **notepad**
+>         **C:\Windows\System32\notepad.exe**
+>        **C:\Windows\notepad.exe**
+
+***\> set DEBUG=ON***
+***\> which cmd***
+***\> set DEBUG=***
+
+> *DEBUG: FindMode = first, VERBOSE = no*
+> *DEBUG: ArgumentsLoop:Begin*
+> *DEBUG:  PathsLoop:Begin*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.COM*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.EXE*
+> C:\Windows\System32\cmd.exe
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.BAT*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.CMD*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.VBS*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.VBE*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.JS*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.JSE*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.WSF*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.WSH*
+> *DEBUG:  Testing for file C:\Windows\system32\cmd.MSC*
+> *DEBUG:  Testing for file C:\Windows\cmd.*
+> *DEBUG:  Testing for file C:\Windows\cmd.COM*
+> *DEBUG:  Testing for file C:\Windows\cmd.EXE*
+> *DEBUG:  Testing for file C:\Windows\cmd.BAT*
+> *DEBUG:  Testing for file C:\Windows\cmd.CMD*
+> *DEBUG:  Testing for file C:\Windows\cmd.VBS*
+> *DEBUG:  Testing for file C:\Windows\cmd.VBE*
+> *DEBUG:  Testing for file C:\Windows\cmd.JS*
+> *DEBUG:  Testing for file C:\Windows\cmd.JSE*
+> *DEBUG:  Testing for file C:\Windows\cmd.WSF*
+> *DEBUG:  Testing for file C:\Windows\cmd.WSH*
+> *DEBUG:  Testing for file C:\Windows\cmd.MSC*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.COM*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.EXE*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.BAT*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.CMD*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.VBS*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.VBE*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.JS*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.JSE*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.WSF*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.WSH*
+> *DEBUG:  Testing for file C:\Windows\System32\Wbem\cmd.MSC*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.COM*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.EXE*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.BAT*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.CMD*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.VBS*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.VBE*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.JS*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.JSE*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.WSF*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.WSH*
+> *DEBUG:  Testing for file C:\Windows\System32\WindowsPowerShell\v1.0\cmd.MSC*
+> *DEBUG:  PathsLoop:End*
+
+### Compatibility
+
+It has been tested with Windows 7/8/10 x86 and x64 bit. It should work with Windows XP/2003 too. 
+It **MAY** work with Windows 2000, if cmd.exe has been updated. Please confirm.
+
+
+## Documentation and references
+
 1. [which equivalents](https://stackoverflow.com/questions/304319/is-there-an-equivalent-of-which-on-the-windows-command-line).
 2. [which tool](https://en.wikipedia.org/wiki/Which_%28Unix%29)
 3. [which man page](https://manpages.debian.org/stretch/debianutils/which.1.en.html)
